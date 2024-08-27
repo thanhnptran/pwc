@@ -9,7 +9,7 @@ Created on Tue Nov 21 15:36:18 2023
 # https://learn.microsoft.com/en-us/rest/api/aiservices/document-models/analyze-document?view=rest-aiservices-2024-02-29-preview&preserve-view=true&tabs=HTTP
 
 import pandas as pd
-import requests, os, time, mimetypes
+import requests, os, time, mimetypes, sys
 
 endpoint = "https://xxx.cognitiveservices.azure.com" # find this in your Document Intelligence resource overview
 key = "xxx" # find this in your Document Intelligence resource overview
