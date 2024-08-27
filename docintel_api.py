@@ -129,3 +129,7 @@ def pdf_to_excel(input_type, path, export_mode):
         print(f'Number of files processed: {len(files)}')
         print(f'Number of pages processed: {number_of_pages}')
         print('##############')
+
+if __name__ == "__main__":
+    args = sys.argv
+    globals()[args[1]](*args[2:])
