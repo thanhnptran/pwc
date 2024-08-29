@@ -1,4 +1,4 @@
-##################### FIRST PART #####################
+##################### CODE FOR EXERCISE 1 #####################
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -24,9 +24,9 @@ with open(url_path, 'w') as file:
 
 driver.quit()
 
-################## END OF FIRST PART ##################
+################## END OF CODE FOR EXERCISE 1 ##################
 
-##################### SECOND PART #####################
+##################### CODE FOR EXERCISE 2 #####################
 
 bds_excel_path = r"C:\python\batdongsan\bds.xlsx" # remember to change to your local file path 
 
@@ -71,4 +71,4 @@ for idx, url in enumerate(url_list):
 
 write_dict_to_excel(info)
 
-################## END OF SECOND PART ##################
+################## END OF CODE FOR EXERCISE 2 ##################
