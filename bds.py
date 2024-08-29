@@ -28,7 +28,7 @@ driver.quit()
 
 ##################### SECOND PART #####################
 
-bds_excel_path = r"C:\python\batdongsan\bds.xlsx"
+bds_excel_path = r"C:\python\batdongsan\bds.xlsx" # remember to change to your local file path 
 
 def write_dict_to_excel(dictionary, file_path=bds_excel_path):
     suffix = '_’
