@@ -17,6 +17,6 @@ result = r.json()
 result['url']
 
 img_data = requests.get(result['url'], verify=False, stream=True)
-file_path = r"C:\python\20230115.jpg"
+file_path = r"C:\python\20230115.jpg" # remember to change to your local file path 
 with open(file_path, 'wb') as handler:
     handler.write(img_data.content)
