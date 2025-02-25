@@ -1,19 +1,20 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Nov 21 15:36:18 2023
+Updated on Tue Feb 25 21:10:10 2025
 
 @author: tthanh007
 """
 
 ### Make sure you have switched to "HAN" gateway before running! ###
-# https://learn.microsoft.com/en-us/rest/api/aiservices/document-models/analyze-document?view=rest-aiservices-2024-02-29-preview&preserve-view=true&tabs=HTTP
+# https://learn.microsoft.com/en-us/rest/api/aiservices/document-models/analyze-document-from-stream?view=rest-aiservices-v4.0%20(2024-11-30)&tabs=HTTP
 
 import pandas as pd
 import requests, os, time, mimetypes, sys
 
 endpoint = "https://xxx.cognitiveservices.azure.com" # find this in your Document Intelligence resource overview
 key = "xxx" # find this in your Document Intelligence resource overview
-api_version = "2023-07-31"
+api_version = "2024-11-30"
 modelId = "prebuilt-layout"
 
 time_format = "%Y-%m-%dT%H:%M:%S.%f"
@@ -27,7 +28,7 @@ def send_api_request(file_path):
         'Content-Type': mime_type,
         'Ocp-Apim-Subscription-Key': key,
     }
-    post_url = f"{endpoint}/formrecognizer/documentModels/{modelId}:analyze?api-version={api_version}"
+    post_url = f"{endpoint}/documentintelligence/documentModels/{modelId}:analyze?api-version={api_version}"
     post_response = requests.post(post_url, headers=post_headers, data=file)
     # post_response = requests.post(post_url, headers=post_headers, data=file, verify=False)
     return post_response
@@ -36,7 +37,7 @@ def get_api_response(api_request_id):
     get_headers = {
         'Ocp-Apim-Subscription-Key': key,
     }
-    get_url = f"{endpoint}/formrecognizer/documentModels/{modelId}/analyzeResults/{api_request_id}?api-version={api_version}"
+    get_url = f"{endpoint}/documentintelligence/documentModels/{modelId}/analyzeResults/{api_request_id}?api-version={api_version}"
     
     retry = True
     while retry:
