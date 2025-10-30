@@ -1,6 +1,6 @@
 import pandas as pd
 import requests, time
-from datetime import datetime, timedelta
+from datetime import datetime
 
 endpoint = 'https://bingw.jasonzeng.dev'
 headers = {
@@ -11,7 +11,7 @@ headers = {
 def save_images(fromdate, todate, folder_path):
     start_date = datetime.strptime(fromdate,'%Y%m%d')
     end_date = datetime.strptime(todate,'%Y%m%d')
-    date_range = pd.date_range(start_date,end_date-timedelta(days=1),freq='d').strftime('%Y%m%d').tolist()
+    date_range = pd.date_range(start_date,end_date,freq='d').strftime('%Y%m%d').tolist()
     
     for date in date_range:
         params = {
