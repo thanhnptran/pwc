@@ -20,7 +20,7 @@ def save_images(fromdate, todate, folder_path):
             'date': f'{date}'
         }
         try:
-            r = requests.get(endpoint,headers=headers,params=params)
+            r = requests.get(endpoint, headers=headers, params=params, verify=False)
             result = r.json()
 
             img_data = requests.get(result['url'], verify=False, stream=True)
